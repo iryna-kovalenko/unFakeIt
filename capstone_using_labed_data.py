@@ -68,13 +68,7 @@ def text_cleaning(txt):
       no_dig_tweets.append(word)
       temp_no_dig_tweets=[]
 
-    for tweet in no_dig_tweets:
-        text_remove_punt=[char for char in tweet if char not in string.punctuation] #in char is not in punctuation list then return
-        text_gather_chars_into_words=''.join(text_remove_punt).split()#make 1 long string and split into words
-        text_remove_stop_words=[w for w in text_gather_chars_into_words if w.lower() not in stop_words] #if word not in list then  return 
-        cleaned_tweets.append(text_remove_stop_words)
-    return cleaned_tweets
-
+   # lets see ....
 # method to remove duplicate tweets 
 def remove_duplicates(df_for_removing_duplicates):
     no_dub=pd.DataFrame.drop_duplicates(df_for_removing_duplicates)
