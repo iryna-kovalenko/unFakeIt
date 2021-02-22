@@ -110,9 +110,7 @@ final_clean_set=list(final_clean_df[0])
 vectorizer=CountVectorizer()
 x=vectorizer.fit_transform(final_clean_set)#get vocab then build vector then make an array
 features_extracted=vectorizer.vocabulary_
-#print(features_extracted) # gives the vocablulary list
-print('training data shape is')
-print(x.shape) # representation of (tweet number, voablulary list)
+
 
 # i need list [] --> pu labels in the list 
 future_label=[]
@@ -142,6 +140,9 @@ train=array_to_df[data_split] # training set based on randomly selested values 8
 test=array_to_df[~data_split] # testing set based on 20% randomly seleted values
 print(' Size of training set : ', len(train))
 print(' Size of testing set : ', len(test))
+#print(features_extracted) # gives the vocablulary list
+print('training data shape is')
+print(x.shape) # representation of (tweet number, voablulary list)
 
 # split into independednt and dependednt value for training
 leng=len(train.axes[1])-1
